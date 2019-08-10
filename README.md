@@ -1,3 +1,76 @@
+## Simple react pagination component.
+
+## Usage Exmaple
+```javascript
+
+function App() {
+  let total = 173, perPage = 10;
+
+  let [current, setCurrent] = React.useState(1);
+  const onPageChanged = (page) =>{
+    console.log("## page clicked " + page);
+    setCurrent(page);
+  } 
+  
+  return (
+    <>
+      <Pagination
+        onPageChanged={onPageChanged}
+        current={current}
+        total={total}
+        perPage={perPage}
+
+      />
+    </>
+  );
+}
+```
+
+### Props
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th style="width: 100px;">name</th>
+        <th style="width: 50px;">type</th>
+        <th style="width: 50px;">default</th>
+        <th>description</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>onPageChanged</td>
+          <td>PropTypes.func.isRequired</td>
+          <td></td>
+          <td>callback for page change</td>
+        </tr>
+        <tr>
+          <td>perPage</td>
+          <td>PropTypes.number.isRequired</td>
+          <td></td>
+          <td>items to be shown on per page(to calculate total pages)</td>
+        </tr>
+        <tr>
+          <td>total</td>
+          <td>PropTypes.number.isRequired</td>
+          <td></td>
+          <td>total number of results(to calculate total pages)</td>
+        </tr>
+        <tr>
+          <td>current</td>
+          <td>PropTypes.number.isRequired</td>
+          <td></td>
+          <td>current page of pagination</td>
+        </tr>
+        <tr>
+          <td>range</td>
+          <td>PropTypes.number</td>
+          <td>2</td>
+          <td>Range for pagination. Number of pagination items to be shown before and after current page</td>
+        </tr>
+    </tbody>
+</table>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
